@@ -61,8 +61,6 @@ window.addEventListener("scroll",function(){
 
 function isOnScreen(element, percentage = 35) {
     let el = document.getElementById(element);
-    console.log(element)
-    console.log(el);
     let rect = el.getBoundingClientRect();
     let elemTop = rect.top;
     let elemBottom = rect.bottom;

@@ -118,6 +118,11 @@ div.tile > h1 {
     animation-duration: 2.5s;
 }
 
+#btn-butters {
+    padding: 12px 0;
+    cursor: pointer;
+}
+
 #tile-github {
     margin-top: 65px;
     animation-duration: 1.8s;
@@ -134,10 +139,9 @@ div.btn {
     color: azure;
     background-color: var(--accent1);
     border-radius: 12px;
-    padding: 12px;
     margin: 40px auto;
     min-width: 20px;
-    width: 90px;
+    width: 114px;
     text-align: center;
     font-size: 1.2em;
     user-select: none;
@@ -149,6 +153,14 @@ div.btn {
 
 div.btn:hover {
     background-color: var(--accent2);
+}
+
+a.btn {
+    text-decoration: none;
+    color: azure;
+    display: block;
+    padding: 12px 0;
+    margin: 0;
 }
 
 .bottom {
