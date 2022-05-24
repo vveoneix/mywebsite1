@@ -1,3 +1,6 @@
+let mobile = window.matchMedia("(max-width: 768px)")
+const tiles = ["tile-butters", "tile-mystery", "tile-github"]
+
 function getRandInt(min, max){
     return Math.floor(Math.random() * (max - min) ) + min;
 }
@@ -16,11 +19,9 @@ function changeWord(){
     document.getElementById("randword").innerHTML = '<b class="fade-in" id="randword" style="color: ' + color + '" onclick="changeWord()">' + word + mark + '</b>'
 }
 
-let mobile = window.matchMedia("(max-width: 768px)")
-
 window.addEventListener("load",function(){
     if(mobile.matches){
-        ["tile-butters", "tile-mystery", "tile-github"].forEach(element => {
+        tiles.forEach(element => {
             if(isOnScreen(element, 10)){
                 playAnimation(element);
             }else{
@@ -30,12 +31,12 @@ window.addEventListener("load",function(){
     }
     else{
         if(isOnScreen("three-tiles")){
-            ["tile-butters", "tile-mystery", "tile-github"].forEach(element => {
+            tiles.forEach(element => {
                 playAnimation(element);
             });
         }
         else{
-            ["tile-butters", "tile-mystery", "tile-github"].forEach(element => {
+            tiles.forEach(element => {
                 stopAnimation(element);
             });
         }
@@ -44,7 +45,7 @@ window.addEventListener("load",function(){
 
 window.addEventListener("scroll",function(){
     if(mobile.matches){
-        ["tile-butters", "tile-mystery", "tile-github"].forEach(element => {
+        tiles.forEach(element => {
             if(isOnScreen(element, 10)){
                 playAnimation(element);
             }
@@ -52,7 +53,7 @@ window.addEventListener("scroll",function(){
     }
     else{
         if(isOnScreen("three-tiles")){
-            ["tile-butters", "tile-mystery", "tile-github"].forEach(element => {
+            tiles.forEach(element => {
                 playAnimation(element);
             });
         }

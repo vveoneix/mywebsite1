@@ -13,11 +13,6 @@ html, body {
     font-family: 'Roboto Mono', monospace;
 }
 
-div {
-    width: 80%;
-    margin: 0 10%;
-}
-
 hr {
     width: 80%;
     border-color: var(--bgdark);
@@ -88,6 +83,7 @@ div.tile {
     display: inline;
     margin: 0 1%;
     aspect-ratio: 1 / 1.6;
+    width: 80%;
     min-width: 200px;
     max-width: 250px;
     max-height: 350px;
@@ -130,7 +126,7 @@ div.tile > h1 {
 
 .icon {
     border-radius: 50%;
-    width: 30%;
+    width: 75px;
     display: block;
     margin: auto;
 }
@@ -171,7 +167,7 @@ a.btn {
     margin:0;
 }
 
-div.footer {
+footer {
     display: flex;
     height: 121px;
     width: 100%;
