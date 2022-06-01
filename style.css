@@ -284,7 +284,7 @@ footer {
         display: block;
         width: 80%;
         animation-name: slide-right;
-        animation-duration: 1.3s;
+        animation-duration: 0.9s;
     }
 
     section {
@@ -293,7 +293,7 @@ footer {
 
     #tile-butters {
         margin: 35px auto;
-        animation-duration: 1.3s;
+        animation-duration: 0.9s;
     }
 
     #tile-mystery {
@@ -302,6 +302,6 @@ footer {
 
     #tile-github {
         margin: 35px auto;
-        animation-duration: 1.3s;
+        animation-duration: 0.9s;
     }
 }

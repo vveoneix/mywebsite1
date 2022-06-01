@@ -46,7 +46,7 @@ window.addEventListener("load",function(){
 window.addEventListener("scroll",function(){
     if(mobile.matches){
         tiles.forEach(element => {
-            if(isOnScreen(element, 10)){
+            if(isOnScreen(element, 30)){
                 playAnimation(element);
             }
         });
