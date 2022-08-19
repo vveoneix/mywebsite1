@@ -71,6 +71,12 @@ span.credit a:link {
     -ms-user-select: none;
 }
 
+.content {
+    margin: 0 auto;
+    display: block;
+    max-width: 1200px;
+}
+
 div.tiles {
     margin: 35px 0;
     width: 100%;
@@ -288,7 +294,8 @@ footer {
     }
 
     section {
-        margin: 0;
+        width: 80%;
+        margin: 0 auto;
     }
 
     #tile-butters {
