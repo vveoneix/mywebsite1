@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto&display=swap');
 
 :root {
-    --accent1: hsl(240, 78%, 70%);
-    --accent2: hsl(240, 66%, 75%);
-    --bgbright: hsl(0, 0%, 94%);
-    --bgdark: hsl(200, 19%, 18%);
+    --theme: 0;
+    --accent1: 240, 78%, 70%;
+    --accent2: 240, 66%, 75%;
+    --bgbright: 0, 0%, 94%;
+    --bgdark: 200, 19%, 18%;
+    --welcomebg: url(images/blueberries/blueberries2.png);
 }
 
 html, body {
@@ -28,9 +30,9 @@ div.welcome {
     text-align: center;
     color: azure;
     padding: 188px 0 207px;
-    background: linear-gradient(to top, rgba(51, 51, 204,0.5), rgba(51, 51, 204,0)),url("images/bg.jpg") no-repeat center;
+    background: linear-gradient(to top, hsl(var(--accent2), 0.7), hsl(var(--accent1), 0)),var(--welcomebg) no-repeat center;
     background-size: cover;
-    border-bottom: 1px solid var(--bgbright);
+    border-bottom: 1px solid hsl(var(--bgbright));
     overflow: hidden;
     user-select: none;
     -webkit-user-select: none;
@@ -51,7 +53,10 @@ span.credit {
 }
 
 span.credit a:link {
-    color: lightblue;
+    color: hsl(var(--accent2));
+    background-color: hsl(var(--bgdark));
+    border-radius: 3px;
+    padding: 1px;
     text-decoration: none;
 }
 
@@ -63,7 +68,7 @@ span.credit a:link {
     text-align: center;
     padding: 28px 0 40px;
     color: azure;
-    background-color: var(--bgdark);
+    background-color: hsl(var(--bgdark));
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -95,7 +100,7 @@ div.tile {
     max-height: 350px;
     overflow: hidden;
     padding: 15px 25px;
-    background-color: var(--bgbright);
+    background-color: hsl(var(--bgbright));
     align-items: center;
     border-radius: 12px;
     position: relative;
@@ -139,7 +144,7 @@ div.tile > h1 {
 
 div.btn {
     color: azure;
-    background-color: var(--accent1);
+    background-color: hsl(var(--accent1));
     border-radius: 12px;
     margin: 40px auto;
     min-width: 20px;
@@ -154,7 +159,7 @@ div.btn {
 }
 
 div.btn:hover {
-    background-color: var(--accent2);
+    background-color: hsl(var(--accent2));
 }
 
 a.btn {
@@ -166,7 +171,7 @@ a.btn {
 }
 
 section {
-    background-color: var(--bgbright);
+    background-color: hsl(var(--bgbright));
     border-radius: 12px;
     padding: 2% 4%;
     font-size: 1em;
@@ -206,7 +211,7 @@ footer {
     width: 100%;
     margin: 10% 0 5%;
     color: azure;
-    background-color: var(--bgdark);
+    background-color: hsl(var(--bgdark));
     font-size: 1.3em;
     text-align: center;
     align-items: center;
@@ -228,6 +233,10 @@ footer {
 .slide-right {
     animation-name: slide-left;
     animation-duration: 2s;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
 
 @keyframes fade-in {

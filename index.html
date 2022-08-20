@@ -11,9 +11,9 @@
     <body class="fade-in" style="animation-duration: 0.7s;">
         <div class="welcome">
             <a id="title">qyl.me</a>
-            <span class="credit slide-right" style="animation-duration: 1s;">Photo by <a href="https://unsplash.com/@chapter2studio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cindy Liu</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
+            <span class="credit slide-right" style="animation-duration: 1s;">Image generated with <a href="https://openai.com/dall-e-2/">DALL-E 2</a></span>
         </div>
-        <div class="some-words">Blueberries are <b class="fade-in" id="randword" style="color: #ccccff" onclick=changeWord()> blue!</b></div>
+        <div class="some-words"><span class="thing capitalize">Blueberries</span> are <b class="fade-in" id="randword" style="color: #ccccff" onclick=changeWord()> blue!</b></div>
         <div class="content">
             <div class="tiles" id="three-tiles">
                 <div class="tile" id="tile-butters">
@@ -44,6 +44,14 @@
                     </div>
                 </div>
             </div>
+            <hr style="margin: 5% auto;"/>
+            <section>
+                <h1>Do you hate <span class="thing">blueberries</span>?</h1>
+                <hr/>
+                <p>If you do then it's your lucky day!</p>
+                <p>With a simple click of a button right below this text you can replace <span class="thing">blueberries</span> with something else!</p>
+                <div class="btn" id="btn-butters" onclick="randomTheme();">Do it.</div>
+            </section>
         </div>
         <footer>
             This site might look useless. Because it is.
