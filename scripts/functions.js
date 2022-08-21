@@ -17,7 +17,7 @@ function changeWord(){
     let word = adjectives[getRandInt(0,1317)];
     let color = colors[getRandInt(0,11)];
     let mark = punctuation[getRandInt(0,3)];
-    document.getElementById("randword").innerHTML = '<b class="fade-in" id="randword" style="color: ' + color + '" onclick="changeWord()">' + word + mark + '</b>'
+    document.getElementById("randword").outerHTML = '<b class="fade-in" id="randword" style="color: ' + color + '" onclick="changeWord()">' + word + mark + '</b>'
 }
 
 window.addEventListener("load",function(){

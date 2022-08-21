@@ -212,7 +212,7 @@ footer {
     display: flex;
     height: 121px;
     width: 100%;
-    margin: 10% 0 5%;
+    margin: 5% 0 0 0;
     color: azure;
     background-color: hsl(var(--bgdark));
     font-size: 1.3em;
