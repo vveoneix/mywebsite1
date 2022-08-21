@@ -1,6 +1,6 @@
 let mobile = window.matchMedia("(max-width: 768px)")
 let root = document.querySelector(":root");
-const tiles = ["tile-butters", "tile-mystery", "tile-github"]
+const tiles = ["#tile-butters", "#tile-mystery", "#tile-github"];
 
 function getRandInt(min, max){
     return Math.floor(Math.random() * (max - min) ) + min;
@@ -21,61 +21,67 @@ function changeWord(){
 }
 
 window.addEventListener("load",function(){
-    if(mobile.matches){
-        tiles.forEach(element => {
-            if(isOnScreen(element, 10)){
-                playAnimation(element);
-            }else{
-                stopAnimation(element);
-            }
-        });
-    }
-    else{
-        if(isOnScreen("three-tiles")){
-            tiles.forEach(element => {
-                playAnimation(element);
-            });
-        }
-        else{
-            tiles.forEach(element => {
-                stopAnimation(element);
-            });
-        }
-    }
+    animateTiles(true);
+    animateSections(true);
 })
 
 window.addEventListener("scroll",function(){
+    animateTiles();
+    animateSections();
+})
+
+function animateTiles(enableStop = false){
     if(mobile.matches){
         tiles.forEach(element => {
-            if(isOnScreen(element, 30)){
-                playAnimation(element);
+            console.log(document.querySelector(element));
+            if(isOnScreen(document.querySelector(element))){
+                playAnimation(document.querySelector(element));
+            }
+            else if(enableStop){
+                stopAnimation(document.querySelector(element));
             }
         });
     }
     else{
-        if(isOnScreen("three-tiles")){
+        if(isOnScreen(document.querySelector("#three-tiles"))){
             tiles.forEach(element => {
-                playAnimation(element);
+                playAnimation(document.querySelector(element));
+            });
+        }
+        else if(enableStop){
+            tiles.forEach(element => {
+                stopAnimation(document.querySelector(element));
             });
         }
     }
-})
+}
 
-function isOnScreen(element, percentage = 35) {
-    let el = document.getElementById(element);
-    let rect = el.getBoundingClientRect();
+function animateSections(enableStop = false){
+    let sections = document.querySelectorAll("section");
+    sections.forEach(element => {
+        if(isOnScreen(element)){
+            playAnimation(element);
+        }
+        else if(enableStop){
+            stopAnimation(element);
+        }
+    });
+}
+
+function isOnScreen(element, percentage = 10) {
+    let rect = element.getBoundingClientRect();
     let elemTop = rect.top;
     let elemBottom = rect.bottom;
-    let isVisible = (elemBottom <= window.innerHeight * (1 + percentage * 0.01));
+    let isVisible = (elemTop <= window.innerHeight * (1 - percentage * 0.01));
     return isVisible;
 }
 
 function playAnimation(element){
-    document.getElementById(element).classList.remove("pauseanimation");
+    element.classList.remove("pauseanimation");
 }
 
 function stopAnimation(element){
-    document.getElementById(element).classList.add("pauseanimation");
+    element.classList.add("pauseanimation");
 }
 
 function changeTheme(theme) {
